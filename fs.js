@@ -35,20 +35,21 @@ const fs = require("fs")
 
 
 // 4.rename the file name
-// fs.rename("third.txt", "utf-8", (err) => {
-//     if (err) {
-//         console.log("File not renamed!", err);
-//     } else {
-//         console.log("File renamed successfully!");
-//     }
-// });
+fs.rename("example.txt","today.txt", (err) => {
+    if (err) {
+        console.log("File not renamed!", err);
+    } else {
+        console.log("File renamed successfully!");
+    }
+});
 
 // 5.unlink the file or delete the file
 
-fs.unlink("exmple.txt","data",(err)=>{
-    if(err){
-        console.log(err,"file doesn't deleted!");
-    }
-    console.log("file deleted successfully!");
+// fs.unlink("exmple.txt",(err)=>{
+//     if(err){
+//         console.log(err,"file doesn't deleted!");
+//         return
+//     }
+//     console.log("file deleted successfully!");
     
-})
+// });
