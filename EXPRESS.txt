@@ -1,0 +1,23 @@
+
+
+1. application/x-www-form-urlencoded
+•	Default Encoding: This is the default encoding type for HTML forms.
+•	How It Works: Data is encoded as key-value pairs. Spaces are replaced with + signs, and special characters are URL-encoded (e.g., & becomes %26).
+•	Use Case: Best for simple forms that only contain text fields and do not require file uploads. It works well for most standard form submissions.
+2. multipart/form-data
+•	Used for File Uploads: This encoding type is required when a form includes file uploads.
+•	How It Works: Data is divided into parts, each with its own content type, and it can include binary data. Each field is separated by a boundary string.
+•	Use Case: Ideal for forms that include file input elements (like <input type="file">) alongside regular text fields.
+
+
+
+
+In Express, the express.urlencoded({ extended: true }) middleware is used to parse incoming requests with URL-encoded payloads. The extended option determines how the parsing is done:
+•	extended: true: This option uses the qs library to parse the URL-encoded data, allowing for rich objects and arrays. It supports nested objects, so you can send complex data structures.
+•	extended: false: This option uses the querystring library to parse the data. It only supports simpler key-value pairs and does not handle nested objects or arrays.
+
+
+
+
+
+
