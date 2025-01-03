@@ -33,15 +33,27 @@ const fs = require("fs")
 //     }
 // })
 
+// i . create the file
+// const Data = "today file system module praticed"
+// fs.writeFile("example.txt",Data,(err)=>{
+//     if(err){
+//         console.log(err,"file doesn't created!");
+//     }
+//     else{
+//         console.log("file created succesfully!");
+        
+//     }
+// })
+
 
 // 4.rename the file name
-fs.rename("example.txt","today.txt", (err) => {
-    if (err) {
-        console.log("File not renamed!", err);
-    } else {
-        console.log("File renamed successfully!");
-    }
-});
+// fs.rename("example.txt","today.txt", (err) => {
+//     if (err) {
+//         console.log("File not renamed!", err);
+//     } else {
+//         console.log("File renamed successfully!");
+//     }
+// });
 
 // 5.unlink the file or delete the file
 
@@ -53,3 +65,13 @@ fs.rename("example.txt","today.txt", (err) => {
 //     console.log("file deleted successfully!");
     
 // });
+const file_old = 'example.txt';
+const  file_new = 'new_file.txt'; 
+fs.rename(file_old,file_new,(err)=>{
+    if(err){
+        console.log(err,"file doesn't renamed");        
+    }
+    else{
+        console.log("file renamed succesfully");   
+    }
+})
