@@ -4,7 +4,6 @@ const fs = require("fs");
 const server = http.createServer((req, res) => {
     const Data = `${Date.now()} data recervied\n`
     fs.appendFile("today.txt", Data, (err, data) => {
-        // res.write("when ever hit the server the data will store in file");
         if (req.url == "/") {
             res.write("home section")
         }
