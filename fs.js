@@ -41,7 +41,7 @@ const fs = require("fs")
 //     }
 //     else{
 //         console.log("file created succesfully!");
-        
+
 //     }
 // })
 
@@ -55,6 +55,18 @@ const fs = require("fs")
 //     }
 // });
 
+//4.  rename file in file system
+// const file_old = 'example.txt';
+// const file_new = 'new_file.txt';
+// fs.rename(file_old, file_new, (err) => {
+//     if (err) {
+//         console.log(err, "file doesn't renamed");
+//     }
+//     else {
+//         console.log("file renamed succesfully");
+//     }
+// });
+
 // 5.unlink the file or delete the file
 
 // fs.unlink("exmple.txt",(err)=>{
@@ -63,15 +75,6 @@ const fs = require("fs")
 //         return
 //     }
 //     console.log("file deleted successfully!");
-    
+
 // });
-const file_old = 'example.txt';
-const  file_new = 'new_file.txt'; 
-fs.rename(file_old,file_new,(err)=>{
-    if(err){
-        console.log(err,"file doesn't renamed");        
-    }
-    else{
-        console.log("file renamed succesfully");   
-    }
-})
+
