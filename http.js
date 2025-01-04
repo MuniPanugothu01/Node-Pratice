@@ -3,8 +3,8 @@ const fs = require("fs");
 // create the surver
 const server = http.createServer((req, res) => {
     console.log(req.headers);
-    
-    const Data = `${Date.now()} data recervied\n`
+
+    const Data = `${Date.now()}: ${req.url} data recervied\n`
     fs.appendFile("today.txt", Data, (err, data) => {
         if (req.url == "/") {
             res.write("home section")
@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
             res.end()
         }
         res.end()
-    })
+    })      
 
 
 })
