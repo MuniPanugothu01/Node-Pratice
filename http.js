@@ -1,10 +1,14 @@
 const http = require("http");
 const fs = require("fs");
+const url = require("url")
 // create the surver
 const server = http.createServer((req, res) => {
     console.log(req.headers);
 
-    const Data = `${Date.now()}: ${req.url} data recervied\n`
+    const Data = `${Date.now()}: ${req.url} data recervied\n`;
+    const myurl = url.parse(req.url,true)
+    console.log(myurl);
+
     fs.appendFile("today.txt", Data, (err, data) => {
         if (req.url == "/") {
             res.write("home section")
