@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
 
     fs.appendFile("today.txt", Data, (err, data) => {
         if (req.url == "/") {
-            res.write("home section")
+            res.write("home sections")
         }
         else if (req.url == "/about") {
             res.write("About section!")
