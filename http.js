@@ -1,6 +1,6 @@
 const http = require("http");
 const fs = require("fs");
-const url = require("url")
+const url = require("url");
 // create the surver
 const server = http.createServer((req, res) => {
     console.log(req.headers);
