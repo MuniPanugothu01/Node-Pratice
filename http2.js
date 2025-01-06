@@ -3,8 +3,7 @@ const fs = require("fs");
 const server = http.createServer((req, res) => {
     res.write("another sections")
     res.end()
-
-
+let Data = `${Date.now()} new data recervised! `
     fs.writeFile("http.txt", "data", (err, data) => {
         if (err) {
             res.write(`error in file ${err}`)
