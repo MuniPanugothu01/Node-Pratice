@@ -1,18 +1,26 @@
 const http = require("http");
 const fs = require("fs");
+const url = require("url")
+
+
 const server = http.createServer((req, res) => {
+    console.log(req.url);
     res.write("another sections")
     res.end()
-let Data = `${Date.now()} new data recervised! `
-    fs.writeFile("http.txt", "data", (err, data) => {
+    let Data = `${Date.now()} new data recervised\n `
+    fs.appendFile("http.txt", Data,(err, data) => {
         if (err) {
-            res.write(`error in file ${err}`)
+            // res.writeHead(500, { "Content-Type": "text/plain" });
+            res.write(`Error writing to file: ${err.message}`);
         }
         else {
-            res.write(`There is no error in file ${data}`)
+            // res.writeHead(200, { "Content-Type": "text/plain" });
+            res.write("Data written to file successfully!");
         }
         res.end()
     })
+
+    
 
 
 
