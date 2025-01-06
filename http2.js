@@ -1,12 +1,25 @@
 const http = require("http");
-
-const server = http.createServer((res, req) => {
-    res.write("home sections")
+const fs = require("fs");
+const server = http.createServer((req, res) => {
+    res.write("another sections")
     res.end()
-    
+
+
+    fs.writeFile("http.txt", "data", (err, data) => {
+        if (err) {
+            res.write(`error in file ${err}`)
+        }
+        else {
+            res.write(`There is no error in file ${data}`)
+        }
+        res.end()
+    })
+
+
+
 })
 
-server.listen(3001, () => {
-    console.log(`port is running is! ${3001}`);
+server.listen(3002, () => {
+    console.log(`port is running is! ${3002}`);
 
 })
