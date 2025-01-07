@@ -17,7 +17,7 @@ const server = http.createServer((req, res) => {
             res.write(`Hai ${username}`);
         }
         else if (parsed.pathname === "/search") {
-            const search = parsed.query.userid
+            const search = parsed.query.userid;
             res.write(`user id is! ${search}`)
         }
         else {
