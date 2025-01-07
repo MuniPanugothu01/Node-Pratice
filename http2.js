@@ -13,7 +13,7 @@ const server = http.createServer((req, res) => {
             res.write(`Home section!`);
         }
         else if (parsed.pathname === "/about") {
-            const username = parsed.query.myname;
+            const username = parsed.query.myname;            
             res.write(`Hai ${username}`);
         }
         else if (parsed.pathname === "/search") {
