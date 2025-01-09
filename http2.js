@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
   const parsed = url.parse(req.url, true);
   fs.appendFile("http.txt", Data, (err, data) => {
     if (parsed.pathname === "/") {
-      res.write(`Home section!`);
+      res.write(`Home section! area`);
     } else if (parsed.pathname === "/about") {
       const username = parsed.query.myname;
       res.write(`Hai ${username}`);
