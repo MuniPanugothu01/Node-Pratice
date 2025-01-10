@@ -18,4 +18,4 @@ const Div = (a, b) => {
   return a % b;
 };
 
-modul.exports = { Add, Sub, Mul, Div };
+module.exports = { Add, Sub, Mul, Div };
