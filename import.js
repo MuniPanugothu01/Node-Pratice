@@ -1,6 +1,6 @@
 const http = require("http");
 // import the files
-const { Add, Sub, Mul, Div } = require("./export");
+const { Add as ADD, Sub, Mul, Div } = require("./export");
 console.log(Add(10, 20)); // 30
 console.log(Sub(20, 10)); // 10
 console.log(Mul(2, 5)); // 10
