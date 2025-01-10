@@ -1,29 +1,12 @@
-// const http = require("http");
-// // import the files
-// const { Add as ADD, Sub, Mul, Div } = require("./export");
-// console.log(ADD(10, 20)); // 30
-// console.log(Sub(20, 10)); // 10
-// console.log(Mul(2, 5)); // 10
-// console.log(Div(20, 5)); // 4
-// const server = http.createServer((req, res) => {
-//   res.write("here sendiing the data to server to display in broweser!");
-// });
-
-// server.listen(3001, () => {
-//   console.log(`Here port is! ${3001} Running`);
-// });
 const http = require("http");
 // import the files
-const { Add as ADD, Sub, Mul, Div } = require("./export");
-
+const { Add, Sub, Mul, Div } = require("./export");
 console.log(ADD(10, 20)); // 30
 console.log(Sub(20, 10)); // 10
 console.log(Mul(2, 5)); // 10
 console.log(Div(20, 5)); // 4
-
 const server = http.createServer((req, res) => {
-  res.write("Here sending the data to server to display in browser!");
-  res.end(); // End the response
+  res.write("here sendiing the data to server to display in broweser!");
 });
 
 server.listen(3001, () => {
