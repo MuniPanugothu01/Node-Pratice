@@ -1,2 +1,5 @@
 const http = require("http")
-app.get('/')
+const app = require()
+app.get('/',(req,res)=>{
+    res.send("this is the express!")
+});
