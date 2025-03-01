@@ -3,7 +3,7 @@ const app = express();
 
 
 app.use((req,res,next)=>{
-    if(10 < 20){
+    if(10 > 20){
         next()
     }
 })
