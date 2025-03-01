@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-
+// middle wares, if the conditon will statify then only send the requst to server other wise conditin will false then it won't sent to server.
 app.use((req,res,next)=>{
     if(10 < 20){
         next()
