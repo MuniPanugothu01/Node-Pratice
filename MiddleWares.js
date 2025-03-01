@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 
 
+app.use((req,res,next)=>{
+    if(10 < 20){
+        next()
+    }
+})
 
 
 app.get('/',(req,res)=>{
