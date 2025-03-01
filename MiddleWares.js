@@ -29,14 +29,20 @@ app.listen(port, () => {
   console.log(`Port is connected here ${port}`);
 });
 
+// middleware for Second app2
 
-
-
-
+let first = (req, res, next) => {
+  // while we can assign to varible don't need to use the (app2.use)
+  if (10 > 20) {
+    next();
+  } else {
+    console.log("request not send to server bez condition is false!");
+  }
+};
 
 // second API server router, is (app2)
 
-app.post("/home", (req, res) => {
+app.post("/home", first, (req, res) => {
   res.send("data updated to server");
 });
 
