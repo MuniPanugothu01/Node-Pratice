@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+const app2 = express();
+
+
 // middle wares, if the conditon will statify then only send the requst to server other wise conditin will false then it won't sent to server.
 app.use((req,res,next)=>{
     if(10 < 20){
@@ -12,6 +15,7 @@ app.use((req,res,next)=>{
 })
 
 
+// first API server roter
 app.get('/',(req,res)=>{
     res.send('this is home!')
 })
@@ -22,8 +26,11 @@ app.get('/contact',(req,res)=>{
     res.send('this is the contact section')
 })
 
-
+// first API server port number
 let port = 3002;
 app.listen(port,()=>{
     console.log(`Port is connected here ${port}`);
 })
+
+
+// second API server router, is (app2)
