@@ -41,6 +41,17 @@ let first = (req, res, next) => {
   }
 };
 
+
+let SECONDHandler = (req,res,next)=>{
+    if( 10 < 20){
+        next()
+    }
+    else{
+        console.log('cant send the request to server!');
+        res.status(404).send('condition is not sent!')
+    }
+}
+
 // second API server router, is (app2)
 
 app2.post("/home", first, (req, res) => {
