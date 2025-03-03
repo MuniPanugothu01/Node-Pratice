@@ -30,7 +30,6 @@ app.listen(port, () => {
 });
 
 // middleware for Second app2
-
 let first = (req, res, next) => {
   // while we can assign to varible don't need to use the (app2.use)
   if (10 > 20) {
