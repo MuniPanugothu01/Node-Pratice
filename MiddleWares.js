@@ -58,6 +58,17 @@ let ThirdHandler = (req, res, next) => {
   }
 };
 
+let FOurthHandler = (req, res, next) => {
+  if (1 > 2) {
+    next();
+  } else {
+    console.log(
+      "request not sent to the server beacuse of condition is false!"
+    );
+    res.status(403).send("condition is not for these router!");
+  }
+};
+
 // second API server router, is (app2)
 
 app2.post("/home", first, (req, res) => {
