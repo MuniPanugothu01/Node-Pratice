@@ -83,7 +83,7 @@ app2.put("/put", ThirdHandler, (req, res) => {
   res.send("data updated!");
 });
 
-app2.patch("/patch", (req, res) => {
+app2.patch("/patch",FOurthHandler,(req, res) => {
   res.send("data updated specific!");
 });
 
