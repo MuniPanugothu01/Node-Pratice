@@ -40,16 +40,23 @@ let first = (req, res, next) => {
   }
 };
 
+let SECONDHandler = (req, res, next) => {
+  if (10 < 20) {
+    next();
+  } else {
+    console.log("cant send the request to server!");
+    res.status(404).send("condition is not sent!");
+  }
+};
 
-let SECONDHandler = (req,res,next)=>{
-    if( 10 < 20){
-        next()
-    }
-    else{
-        console.log('cant send the request to server!');
-        res.status(404).send('condition is not sent!')
-    }
-}
+let ThirdHandler = (req, res, next) => {
+  if (10 > 11) {
+    next();
+  } else {
+    console.log("this third handler cant sent to the server!");
+    res.status(405).send("condition is not valid here");
+  }
+};
 
 // second API server router, is (app2)
 
@@ -57,11 +64,11 @@ app2.post("/home", first, (req, res) => {
   res.send("data updated to server");
 });
 
-app2.get("/get", (req, res) => {
+app2.get("/get", SECONDHandler, (req, res) => {
   res.send("server data get!");
 });
 
-app2.put("/put", (req, res) => {
+app2.put("/put", ThirdHandler, (req, res) => {
   res.send("data updated!");
 });
 
