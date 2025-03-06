@@ -20,3 +20,11 @@ let PORT = 4001;
 app.listen(PORT, () => {
   console.log(`port is the ${PORT} is connected!`);
 });
+
+
+// second example on application level middleware.
+
+const app2 = require('express');
+
+
+
