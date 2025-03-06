@@ -31,20 +31,20 @@ let MiddleHandleFunction = (req, res, next) => {
   next();
 };
 
-app.use(MiddleHandleFunction);
+app2.use(MiddleHandleFunction);
 
-app.get("/", (req, res) => {
-  res.send("this is home second app1");
+app2.get("/", (req, res) => {
+  res.send("this is home second app21");
 });
-app.post("/about", (req, res) => {
-  res.send("this is the about section for app2");
+app2.post("/about", (req, res) => {
+  res.send("this is the about section for app22");
 });
 
-app.put("/put", (req, res) => {
-  res.send("this is the put method!app2");
+app2.put("/put", (req, res) => {
+  res.send("this is the put method!app22");
 });
 
 const Port = 3002;
-app.listen(Port, () => {
+app2.listen(Port, () => {
   console.log(`port is connected ${Port}`);
 });
