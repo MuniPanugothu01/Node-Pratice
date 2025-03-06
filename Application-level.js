@@ -49,4 +49,36 @@ app2.listen(Port, () => {
   console.log(`Server is running on port ${Port}`);
 });
 
-// Router level middle-Ware;
+// Router level middle-Ware, first example on Router level middle ware;
+
+const router = express.Router();
+
+let RouterMiddleHandlezFun = (req, res, next) => {
+  console.log(`router method ${req.method}  and url is ${req.url}`);
+  next();
+};
+
+router.use(RouterMiddleHandlezFun);
+// Define the route within the route
+router.get("/", (req, res) => {
+  res.send("router level home!");
+});
+
+router.post("/POST", (req, res) => {
+  res.send("this is the router level POST");
+});
+
+router.put("/PUT", (req, res) => {
+  res.send("this router level PUT Method!");
+});
+
+// Mount the router on app
+app.use("/user", router);
+
+app.get("/appH", (req, res) => {
+  res.send("this is seperate APP!");
+});
+
+app.listen(3004, () => {
+  console.log(`running port is ${3004}`);
+});
