@@ -21,10 +21,30 @@ app.listen(PORT, () => {
   console.log(`port is the ${PORT} is connected!`);
 });
 
-
 // second example on application level middleware.
 
-const app2 = require('express');
+const app2 = require("express");
 
+// middleware
+let MiddleHandleFunction = (req, res, next) => {
+  console.log(`request method is ${req.method} and the url is ${req.url}`);
+  next();
+};
 
+app.use(MiddleHandleFunction);
 
+app.get("/", (req, res) => {
+  res.send("this is home second app1");
+});
+app.post("/about", (req, res) => {
+  res.send("this is the about section for app2");
+});
+
+app.put("/put", (req, res) => {
+  res.send("this is the put method!app2");
+});
+
+const Port = 3002;
+app.listen(Port, () => {
+  console.log(`port is connected ${Port}`);
+});
