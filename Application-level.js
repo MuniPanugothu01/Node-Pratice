@@ -61,7 +61,8 @@ let RouterMiddleHandlezFun = (req, res, next) => {
 router.use(RouterMiddleHandlezFun);
 // Define the route within the route
 router.get("/", (req, res) => {
-  res.send("router level home!cc");
+  // res.send("router level home!cc");
+  res.json({message:'get users data!'})
 });
 
 router.post("/POST", (req, res) => {
