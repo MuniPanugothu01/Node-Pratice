@@ -22,8 +22,8 @@ const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGO_URI).then(()=>{
   console.log('mongodb is connected!');
-}).catch(()=>{
-  console.log('mongodb is not connected!');
+}).catch((err)=>{
+  console.log('mongodb is not connected!',err);
 })
 
 
