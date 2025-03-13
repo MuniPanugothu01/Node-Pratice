@@ -5,17 +5,27 @@ dotEnv.config();
 
 // mongoose client require
 
-const { MongoClient } = require("mongodb");
+// const { MongoClient } = require("mongodb");
 
 const app = express();
 
-MongoClient.connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("mongodb connected successfully");
-  })
-  .catch(() => {
-    console.log("mongodb not connected!");
-  });
+// MongoClient.connect(process.env.MONGO_URI)
+//   .then(() => {
+//     console.log("mongodb connected successfully");
+//   })
+//   .catch(() => {
+//     console.log("mongodb not connected!");
+//   });
+
+
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGO_URI).then(()=>{
+  console.log('mongodb is connected!');
+}).catch(()=>{
+  console.log('mongodb is not connected!');
+})
+
 
 app.get("/home", (req, res) => {
   res.send("this is home section");
