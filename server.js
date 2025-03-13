@@ -31,7 +31,7 @@ app.get("/home", (req, res) => {
   res.send("this is home section");
 });
 
-console.log(process.env);
+// console.log(process.env);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
